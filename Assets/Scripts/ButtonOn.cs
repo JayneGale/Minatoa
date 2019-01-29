@@ -5,6 +5,7 @@ using UnityEngine;
 public class ButtonOn : MonoBehaviour {
 	
 	public GameObject buttonToPress;
+	public GameObject objectButtonOperates;
 	public bool buttonIsActivated;
 	MeshRenderer meshRenderer;
 	public Texture buttonOn;
@@ -36,7 +37,8 @@ public class ButtonOn : MonoBehaviour {
 		{
 			animator.SetTrigger ("ButtonPress");
 			DeactivateButton ();
-		}	 
+		}
+		objectButtonOperates.SetActive (buttonIsActivated);
 
 	}
 
@@ -50,6 +52,7 @@ public class ButtonOn : MonoBehaviour {
 	{
 		meshRenderer.material.SetTexture ("_MainTex", buttonOff);
 		buttonIsActivated = false;
+		objectButtonOperates.SetActive (false);
 	}
 
 	public void ToggleButton()
@@ -58,6 +61,7 @@ public class ButtonOn : MonoBehaviour {
 		{
 			meshRenderer.material.SetTexture ("_MainTex", buttonOn);
 			buttonIsActivated = true;
+
 			return;
 		} 
 		else if (meshRenderer.material.GetTexture ("_MainTex") == buttonOn) 
