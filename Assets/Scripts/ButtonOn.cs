@@ -22,18 +22,18 @@ public class ButtonOn : MonoBehaviour {
 
 	void Update ()
 	{
-		if (Input.GetKey(KeyCode.T))
+		if (Input.GetKeyDown(KeyCode.T))
 		{
 			//Send the message to the Animator to activate the trigger parameter named "ButtonPress"
 			animator.SetTrigger("ButtonPress");
 			ToggleButton ();
 		}
-		if (Input.GetKey (KeyCode.Equals)) 
+		if (Input.GetKeyDown (KeyCode.Equals)) 
 		{
 			animator.SetTrigger ("ButtonPress");
 			ActivateButton ();
 		}	 
-		if (Input.GetKey (KeyCode.Minus)) 
+		if (Input.GetKeyDown (KeyCode.Minus)) 
 		{
 			animator.SetTrigger ("ButtonPress");
 			DeactivateButton ();
