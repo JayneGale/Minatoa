@@ -5,25 +5,9 @@ using UnityEngine;
 public class Spin : MonoBehaviour {
 
     public Vector3 rotationSpeed;
-	public GameObject orreryButton;
-	bool spinning = false;
 
-	// Use this for initialization
-	void Start () {
-		ButtonClicker buttonClicker; 
-		buttonClicker = orreryButton.GetComponent<ButtonClicker>();
-		buttonClicker.OnClicked += Button_OnClicked;
-	}
-
-	void Button_OnClicked (bool buttonState)
+	void Update () 
 	{
-		spinning = buttonState;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		if (spinning) {
-			gameObject.transform.eulerAngles += rotationSpeed;
-		}
+		gameObject.transform.eulerAngles += rotationSpeed;
 	}
 }
