@@ -180,8 +180,6 @@ GameObject:
   - component: {fileID: 46515939}
   - component: {fileID: 46515935}
   - component: {fileID: 46515934}
-  - component: {fileID: 46515937}
-  - component: {fileID: 46515938}
   - component: {fileID: 46515936}
   - component: {fileID: 46515941}
   - component: {fileID: 46515942}
@@ -233,106 +231,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 46515933}
   m_Mesh: {fileID: 4300000, guid: c5683ecf1188fed4b892e8429e1f0bc2, type: 3}
---- !u!114 &46515936
-MonoBehaviour:
+--- !u!111 &46515936
+Animation:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 46515933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
---- !u!114 &46515937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 46515933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_MethodName: set_enabled
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 1
-        - m_Target: {fileID: 46515934}
-          m_MethodName: set_material
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 2100000, guid: 0bbd9ba082a906648b7b909421a80b8a,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 1
-        - m_Target: {fileID: 0}
-          m_MethodName: set_enabled
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 1
-        - m_Target: {fileID: 0}
-          m_MethodName: ToggleButton
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
-        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  delegates: []
---- !u!223 &46515938
-Canvas:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 46515933}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
-  m_RenderMode: 2
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
+  m_Animation: {fileID: 7400000, guid: 5f5f07f4c74884e1687f14a602a33940, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!224 &46515939
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3132,6 +3044,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 89.999985
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 9b2344ec0ed6ddf4bb67e02fcd6c2358, type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b2344ec0ed6ddf4bb67e02fcd6c2358, type: 3}
   m_IsPrefabParent: 0
@@ -3651,6 +3567,40 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 2c67d52575f8a40c28a486d5465df066, type: 3}
   m_PrefabInternal: {fileID: 1447561049}
+--- !u!1 &1485363968 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100014, guid: 9b2344ec0ed6ddf4bb67e02fcd6c2358, type: 3}
+  m_PrefabInternal: {fileID: 1220684917}
+--- !u!111 &1485363971
+Animation:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1485363968}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400002, guid: 9b2344ec0ed6ddf4bb67e02fcd6c2358, type: 3}
+  m_Animations:
+  - {fileID: 7400002, guid: 9b2344ec0ed6ddf4bb67e02fcd6c2358, type: 3}
+  - {fileID: 7400000, guid: f36ab780de2ec4bb78ac4a8dec609e47, type: 2}
+  - {fileID: 7400000, guid: b2bf58e5bcc7e46af968ffa2555df6f8, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!114 &1485363972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1485363968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8abb95416963a4b2aa13d4a3f6248973, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portalButton: {fileID: 1917077470}
+  isOpening: 0
 --- !u!1 &1494857083 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 72ec89a5ac3330845b552e68020cd870, type: 3}
@@ -4915,8 +4865,8 @@ GameObject:
   - component: {fileID: 1917077472}
   - component: {fileID: 1917077471}
   - component: {fileID: 1917077478}
-  - component: {fileID: 1917077473}
   - component: {fileID: 1917077477}
+  - component: {fileID: 1917077473}
   m_Layer: 0
   m_Name: ButtonPortal
   m_TagString: Untagged
@@ -5021,13 +4971,13 @@ Animation:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1917077470}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: 5f5f07f4c74884e1687f14a602a33940, type: 2}
   m_Animations: []
   m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 1
   m_CullingType: 0
 --- !u!1001 &1941232848
 Prefab:
