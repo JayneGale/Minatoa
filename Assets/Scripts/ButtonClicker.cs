@@ -53,21 +53,17 @@ public class ButtonClicker : MonoBehaviour {
 	public void ToggleButton()
 	{
 		buttonIsOn = !buttonIsOn;
+		Debug.Log ("ButtonIsOn is " + buttonIsOn);
 		refreshButton();
 	}
 
-	private void refreshButton()
+	public void refreshButton()
 	{
 		animator.SetTrigger ("ButtonPress");
 		meshRenderer.material.SetTexture ("_MainTex", buttonIsOn ? buttonOn : buttonOff);
-		if (OnClicked != null) {
-//			Debug.Log ("OnClicked is not null!");
+		if (OnClicked != null) 
+		{
 			OnClicked (buttonIsOn);
-
 		} 
-/*		else {			
-			Debug.Log ("OnClicked is null!");
-		}
-*/
 	}
 }
