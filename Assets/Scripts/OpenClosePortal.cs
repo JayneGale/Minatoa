@@ -2,28 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OpenClosePortal : MonoBehaviour {
+public class OpenClosePortal : MonoBehaviour
+{
 
-	public GameObject portalButton;
-//	public GameObject portalInsideButton;
+    public GameObject portalButton;
+	public GameObject portal;
 	public bool isOpening;
-	Animator animator;
+	Animator portalAnimator;
 
 	void Start () 
 	{
 		ButtonClicker buttonClicker; 
 		buttonClicker = portalButton.GetComponent<ButtonClicker>();
-
 		buttonClicker.OnClicked += Button_OnClicked;
-		animator = gameObject.GetComponent<Animator>();
+		portalAnimator = portal.GetComponent<Animator>();
 		isOpening = false;
 	}
 
-	void Button_OnClicked (bool buttonState)
+void Button_OnClicked (bool buttonState)
 	{		
 		Debug.Log ("ButtonState is " + buttonState);
-		animator.SetBool("isOpening", buttonState);
+		portalAnimator.SetBool("isOpening", buttonState);
 		Debug.Log ("isOpening is " + isOpening);
-
 	}
 }

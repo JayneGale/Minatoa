@@ -9,7 +9,7 @@ public class ButtonClicker : MonoBehaviour {
 	MeshRenderer meshRenderer;
 	public Texture buttonOn;
 	public Texture buttonOff;
-	Animator animator;
+	Animator buttonAnimator;
 
 	public delegate void clickAction(bool buttonState);
 	public event clickAction OnClicked;
@@ -18,20 +18,12 @@ public class ButtonClicker : MonoBehaviour {
 	{
 		meshRenderer = GetComponent<MeshRenderer> ();
 		meshRenderer.material.SetTexture ("_MainTex", buttonOff);
-		animator = buttonToPress.GetComponent<Animator>();
+		buttonAnimator = buttonToPress.GetComponent<Animator>();
 		buttonIsOn = false;
 	}
 
 	void Update ()
 	{
-		if (Input.GetKeyDown(KeyCode.T))
-		{
-			ToggleButton ();
-		}
-		if (Input.GetKeyDown (KeyCode.Equals)) 
-		{
-			ActivateButton ();
-		}	 
 		if (Input.GetKeyDown (KeyCode.Minus)) 
 		{
 			DeactivateButton ();
@@ -59,7 +51,7 @@ public class ButtonClicker : MonoBehaviour {
 
 	public void refreshButton()
 	{
-		animator.SetTrigger ("ButtonPress");
+		buttonAnimator.SetTrigger ("ButtonPress");
 		meshRenderer.material.SetTexture ("_MainTex", buttonIsOn ? buttonOn : buttonOff);
 		if (OnClicked != null) 
 		{
