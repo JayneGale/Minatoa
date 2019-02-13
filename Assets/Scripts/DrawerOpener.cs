@@ -40,13 +40,14 @@ public class DrawerOpener : MonoBehaviour
     public void ToggleDrawer()
     {
         drawerIsOpen = !drawerIsOpen;
-        Debug.Log("drawerIsOpen is " + drawerIsOpen);
+  //      Debug.Log("drawerIsOpen is " + drawerIsOpen);
         OperateDrawer();
     }
 
     public void OperateDrawer()
     {
         drawerAnimator.SetTrigger("openDrawer");
+        Debug.Log("drawerIsOpen is " + drawerIsOpen);
         if (OnClicked != null)
         {
             OnClicked(drawerIsOpen);
