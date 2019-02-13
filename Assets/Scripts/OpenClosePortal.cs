@@ -7,7 +7,6 @@ public class OpenClosePortal : MonoBehaviour
 
     public GameObject portalButton;
 	public GameObject portal;
-	public bool isOpening;
 	Animator portalAnimator;
 
 	void Start () 
@@ -16,13 +15,11 @@ public class OpenClosePortal : MonoBehaviour
 		buttonClicker = portalButton.GetComponent<ButtonClicker>();
 		buttonClicker.OnClicked += Button_OnClicked;
 		portalAnimator = portal.GetComponent<Animator>();
-		isOpening = false;
 	}
 
 void Button_OnClicked (bool buttonState)
 	{		
 		Debug.Log ("ButtonState is " + buttonState);
 		portalAnimator.SetBool("isOpening", buttonState);
-		Debug.Log ("isOpening is " + isOpening);
 	}
 }
