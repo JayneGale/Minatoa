@@ -2,20 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
-//using ButtonClicker;
 
 public class MouseClickRaycast : MonoBehaviour {
 
 	public GameObject player;
 	public CharacterController playerController;
 	public bool buttonIsOn;
+    public bool drawerIsOpen;
 	private MouseLook mouseLook;
 	private FirstPersonController rfpc;
-
-//raycast direction
 	private Ray ray;
-//	private Vector3 rayStartPos;
-//	private Vector3 rayDir;
 
 //change cursor to a hand
 	public bool cursorIsOver;
@@ -23,12 +19,11 @@ public class MouseClickRaycast : MonoBehaviour {
 	public CursorMode cursorMode = CursorMode.Auto;
 	public Vector2 hotSpot = Vector2.zero;
 
-
 	void Start () 
 	{
 		cursorIsOver = false;
-//		rayStartPos = Camera.main.transform.position;
 		buttonIsOn = false;
+        drawerIsOpen = false;
 		if (playerController != null) 
 		{
 			rfpc = playerController.GetComponent<FirstPersonController> ();
@@ -41,19 +36,25 @@ public class MouseClickRaycast : MonoBehaviour {
 	{
 		RaycastHit hit;
 		ray = Camera.main.ScreenPointToRay (Input.mousePosition); 
-//		rayStartPos = Camera.main.transform.position;
-//		rayDir = Input.mousePosition;
-//		Debug.DrawRay (rayStartPos, rayDir*1000.0f, Color.blue);
 		if (Physics.Raycast (ray, out hit, 100.0f)) {
-//			Debug.Log ("Ray is hitting the " + hit.transform.tag);
-			if (hit.collider.tag == "Button") {
-				cursorIsOver = true;
+			if (hit.collider.tag == "Button" || hit.collider.tag == "Drawer")
+            {
+  //              Debug.Log("Ray is hitting the " + hit.transform.tag);
+                cursorIsOver = true;
 				CursorTexture(mouseHand, hotSpot);
 				if (Input.GetMouseButtonDown(0)) 
 				{
-//					Debug.Log ("You clicked a " + hit.collider);
-					buttonIsOn = true;
-					MakeItSo (hit.collider);
+					Debug.Log ("You clicked a " + hit.collider);
+                    if (hit.collider.tag == "Button")
+                    {
+                        buttonIsOn = true;
+                        MakeItSo(hit.collider);
+                    }
+                    if (hit.collider.tag == "Drawer")
+                    {
+                        drawerIsOpen = true;
+                        UseDrawer(hit.collider);
+                    }
 				}
 			}
 		} else {
@@ -80,5 +81,11 @@ public class MouseClickRaycast : MonoBehaviour {
 	{
 		col.GetComponent<ButtonClicker>().ToggleButton();
 	}
+
+    public void UseDrawer(Collider col)
+    {
+        col.GetComponent<DrawerOpener>().ToggleDrawer();
+
+    }
 
 }

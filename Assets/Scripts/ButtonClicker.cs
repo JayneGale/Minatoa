@@ -33,23 +33,23 @@ public class ButtonClicker : MonoBehaviour {
 	public void ActivateButton()
 	{
 		buttonIsOn = true;	
-		refreshButton();
+		RefreshButton();
 	}
 
 	public void DeactivateButton()
 	{
 		buttonIsOn = false;
-		refreshButton();
+		RefreshButton();
 	}
 
 	public void ToggleButton()
 	{
 		buttonIsOn = !buttonIsOn;
 		Debug.Log ("ButtonIsOn is " + buttonIsOn);
-		refreshButton();
+		RefreshButton();
 	}
 
-	public void refreshButton()
+	public void RefreshButton()
 	{
 		buttonAnimator.SetTrigger ("ButtonPress");
 		meshRenderer.material.SetTexture ("_MainTex", buttonIsOn ? buttonOn : buttonOff);
