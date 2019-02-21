@@ -5,8 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - Button
-  - Room
-  - Drawer
   layers:
   - Default
   - TransparentFX
@@ -16,7 +14,7 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
+  - 
   - 
   - 
   - 

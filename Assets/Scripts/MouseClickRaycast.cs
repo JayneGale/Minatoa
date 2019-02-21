@@ -18,6 +18,7 @@ public class MouseClickRaycast : MonoBehaviour {
 	public Texture2D mouseHand;
 	public CursorMode cursorMode = CursorMode.Auto;
 	public Vector2 hotSpot = Vector2.zero;
+    public float armLength;
 
 	void Start () 
 	{
@@ -36,10 +37,11 @@ public class MouseClickRaycast : MonoBehaviour {
 	{
 		RaycastHit hit;
 		ray = Camera.main.ScreenPointToRay (Input.mousePosition); 
-		if (Physics.Raycast (ray, out hit, 100.0f)) {
+		if (Physics.Raycast (ray, out hit, armLength)) {
 			if (hit.collider.tag == "Button" || hit.collider.tag == "Drawer")
             {
-  //              Debug.Log("Ray is hitting the " + hit.transform.tag);
+                Debug.Log("Ray is hitting the " + hit.transform.tag);
+                Debug.Log("Ray is hitting the " + hit.collider.name);
                 cursorIsOver = true;
 				CursorTexture(mouseHand, hotSpot);
 				if (Input.GetMouseButtonDown(0)) 
@@ -52,6 +54,8 @@ public class MouseClickRaycast : MonoBehaviour {
                     }
                     if (hit.collider.tag == "Drawer")
                     {
+                        Debug.Log("DrawerIsOpen " + drawerIsOpen);
+
                         drawerIsOpen = true;
                         UseDrawer(hit.collider);
                     }

@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpinOrrery : MonoBehaviour {
+public class SpinOrrery : MonoBehaviour
+{
 
 	public Vector3 rotationSpeed;
 	public GameObject orreryButton;
-	bool spinning = false;
+	public bool IsSpinning;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
 		ButtonClicker buttonClicker; 
 		buttonClicker = orreryButton.GetComponent<ButtonClicker>();
 		buttonClicker.OnClicked += Button_OnClicked;
@@ -17,13 +19,16 @@ public class SpinOrrery : MonoBehaviour {
 
 	void Button_OnClicked (bool buttonState)
 	{
-		spinning = buttonState;
+		IsSpinning = buttonState;
 	}
 
 	// Update is called once per frame
-	void Update () {
-		if (spinning) {
+	void Update ()
+    {
+		if (IsSpinning)
+        {
 			gameObject.transform.eulerAngles += rotationSpeed;
 		}
 	}
-	}
+
+}
