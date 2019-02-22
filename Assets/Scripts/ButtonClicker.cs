@@ -10,6 +10,8 @@ public class ButtonClicker : MonoBehaviour {
 	public Texture buttonOn;
 	public Texture buttonOff;
 	Animator buttonAnimator;
+    AudioSource buttonSounds;
+    AudioClip buttonClick;
 
 	public delegate void clickAction(bool buttonState);
 	public event clickAction OnClicked;
@@ -20,9 +22,11 @@ public class ButtonClicker : MonoBehaviour {
 		meshRenderer.material.SetTexture ("_MainTex", buttonOff);
 		buttonAnimator = buttonToPress.GetComponent<Animator>();
 		buttonIsOn = false;
-	}
+        buttonSounds = buttonToPress.GetComponent<AudioSource>();
+        buttonClick = buttonSounds.clip;
+    }
 
-	void Update ()
+    void Update ()
 	{
 		if (Input.GetKeyDown (KeyCode.Minus)) 
 		{
@@ -55,7 +59,9 @@ public class ButtonClicker : MonoBehaviour {
 		meshRenderer.material.SetTexture ("_MainTex", buttonIsOn ? buttonOn : buttonOff);
 		if (OnClicked != null) 
 		{
-			OnClicked (buttonIsOn);
+            buttonSounds.PlayOneShot(buttonClick);
+            Debug.Log("Playing Button Audio now");
+            OnClicked(buttonIsOn);
 		} 
 	}
 }

@@ -8,15 +8,14 @@ public class ToggleAudioOnExit : MonoBehaviour {
     public GameObject fountainToTrigger;
     public GameObject player;
     public AudioSource FountainSound;
-    float doorPos;
- //   public bool muffle;
+//    float doorPos;
 
-    // Use this for initialization
     void Start()
     {
-        doorPos = gameObject.transform.position.z;
+ //       doorPos = gameObject.transform.position.z;
         FountainSound = fountainToTrigger.GetComponent<AudioSource>();
         FountainSound.Stop();
+        Debug.Log("fountainOn Start is " + fountainOn);
 
   /*      if (player.transform.position.z >= doorPos)
         {
@@ -29,6 +28,7 @@ public class ToggleAudioOnExit : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
+            Debug.Log("fountainOn OnTrigger Exit is " + fountainOn);
             fountainOn = !fountainOn;
             if (fountainOn)
             {

@@ -22,13 +22,13 @@ public class PlayFountainAudio : MonoBehaviour
 
         public void FountainAudio(bool playFountain)
         {          
-            Debug.Log("FountainAudio Method has been called");
+            Debug.Log("FountainAudio Method has been called and playFountain is " + playFountain);
 
             if (playFountain == true)          
             {
                 //Play the audio you attach to the AudioSource component
                 fountainAudio.Play();
-                Debug.Log("I am playing" + fountainAudio);
+                Debug.Log("I am playing the fountainAudio of " + fountainAudio.name);
             }
 
             else
