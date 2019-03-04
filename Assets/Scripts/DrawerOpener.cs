@@ -7,6 +7,7 @@ public class DrawerOpener : MonoBehaviour
     public GameObject drawerToUse;
     public bool drawerIsOpen;
     Animator drawerAnimator;
+    AudioSource drawerSound;
 
     public delegate void clickAction(bool drawerState);
     public event clickAction OnClicked;
@@ -14,6 +15,7 @@ public class DrawerOpener : MonoBehaviour
     void Start()
     {
         drawerAnimator = drawerToUse.GetComponent<Animator>();
+        drawerSound = drawerToUse.GetComponent<AudioSource>();
         drawerIsOpen = false;
     }
 
@@ -47,6 +49,7 @@ public class DrawerOpener : MonoBehaviour
     public void OperateDrawer()
     {
         drawerAnimator.SetTrigger("OpenDrawer");
+        drawerSound.Play();
         Debug.Log("drawerIsOpen is " + drawerIsOpen);
         if (OnClicked != null)
         {
