@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Button
   - Drawer
+  - Crystal
   layers:
   - Default
   - TransparentFX
