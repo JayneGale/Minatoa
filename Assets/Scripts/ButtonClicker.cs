@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ButtonClicker : MonoBehaviour {
 
@@ -21,18 +19,9 @@ public class ButtonClicker : MonoBehaviour {
 		meshRenderer = GetComponent<MeshRenderer> ();
 		meshRenderer.material.SetTexture ("_MainTex", buttonOff);
 		buttonAnimator = buttonToPress.GetComponent<Animator>();
-		buttonIsOn = false;
         buttonSounds = buttonToPress.GetComponent<AudioSource>();
         buttonClick = buttonSounds.clip;
     }
-
-    void Update ()
-	{
-		if (Input.GetKeyDown (KeyCode.Minus)) 
-		{
-			DeactivateButton ();
-		}
-	}
 
 	public void ActivateButton()
 	{

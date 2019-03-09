@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
 
-public class MouseClickRaycast : MonoBehaviour {
+public class MouseClickRaycast : MonoBehaviour
+{
 
 	public GameObject player;
 	public CharacterController playerController;
@@ -40,8 +39,7 @@ public class MouseClickRaycast : MonoBehaviour {
 		if (Physics.Raycast (ray, out hit, armLength)) {
 			if (hit.collider.tag == "Button" || hit.collider.tag == "Drawer")
             {
-  //              Debug.Log("Ray is hitting the " + hit.transform.tag);
- //               Debug.Log("Ray is hitting the " + hit.collider.name);
+                //              Debug.Log("Ray is hitting the " + hit.transform.tag + hit.collider.name);
                 cursorIsOver = true;
 				CursorTexture(mouseHand, hotSpot);
 				if (Input.GetMouseButtonDown(0)) 

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DrawerOpener : MonoBehaviour
 {
@@ -19,14 +17,6 @@ public class DrawerOpener : MonoBehaviour
         drawerIsOpen = false;
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Minus))
-        {
-            CloseDrawer();
-        }
-    }
-
     public void OpenDrawer()
     {
         drawerIsOpen = true;
@@ -42,7 +32,6 @@ public class DrawerOpener : MonoBehaviour
     public void ToggleDrawer()
     {
         drawerIsOpen = !drawerIsOpen;
-  //      Debug.Log("drawerIsOpen is " + drawerIsOpen);
         OperateDrawer();
     }
 
@@ -50,7 +39,6 @@ public class DrawerOpener : MonoBehaviour
     {
         drawerAnimator.SetTrigger("OpenDrawer");
         drawerSound.Play();
-        Debug.Log("drawerIsOpen is " + drawerIsOpen);
         if (OnClicked != null)
         {
             OnClicked(drawerIsOpen);

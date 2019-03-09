@@ -2,39 +2,68 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ToggleAudioOnExit : MonoBehaviour {
+public class ToggleAudioPortalOpen : MonoBehaviour {
 
-    public bool fountainOn;
     public GameObject fountainToTrigger;
     public GameObject player;
-    public AudioSource FountainSound;
-//    float doorPos;
+    public GameObject portal;
+    AudioSource fountainAudio;
+    AudioSource portalAudio;
+    Animator portalAnimator;
+    bool fountainOn;
+    float portalDoorPos;
+    float playerPos;
+    bool isOpening;
+    bool insideRoom;
 
     void Start()
     {
- //       doorPos = gameObject.transform.position.z;
-        FountainSound = fountainToTrigger.GetComponent<AudioSource>();
-        FountainSound.Stop();
-        Debug.Log("fountainOn Start is " + fountainOn);
+        fountainAudio = fountainToTrigger.GetComponent<AudioSource>();
+        portalAudio = portal.GetComponent<AudioSource>();
+        portalAnimator = portal.GetComponent<Animator>();
+        isOpening = portalAnimator.GetBool("isOpening");
+        portalDoorPos = gameObject.transform.position.x;
+        playerPos = player.transform.position.x;
+     
 
-  /*      if (player.transform.position.z >= doorPos)
+        if (playerPos >= portalDoorPos)
         {
-            FountainSound.Stop();
+            portalAudio.Play();
+            fountainAudio.Stop();
         }
-  */
+ 
+        else 
+        {
+            portalAudio.Stop();
+            fountainAudio.Play();
+        }
     }
 	
     void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
         {
-            Debug.Log("fountainOn OnTrigger Exit is " + fountainOn);
-            fountainOn = !fountainOn;
-            if (fountainOn)
+            playerPos = player.transform.position.x;
+            portalDoorPos = gameObject.transform.position.x;
+            if (playerPos < portalDoorPos)
             {
-                FountainSound.Play();
+                insideRoom = true;
             }
-            else FountainSound.Stop();
+            else
+            {
+                insideRoom = false;
+            }
+            isOpening = portalAnimator.GetBool("isOpening");
+            Debug.Log("isOpening is " + isOpening);
+
+            if (isOpening && insideRoom)
+            {
+                portalAudio.Play();
+            }
+            if (isOpening && !insideRoom)
+            {
+                fountainAudio.Play();
+            }            
         }
     }
 }

@@ -4,38 +4,32 @@ using UnityEngine;
 
 public class PlayFountainAudio : MonoBehaviour
 {
+    public GameObject fountain;
+    public GameObject portal;
+    AudioSource fountainAudio;
+    AudioSource portalAudio;
+    void Start()
+    {
+        fountainAudio = fountain.GetComponent<AudioSource>();
+        fountainAudio.Stop();
+        portalAudio = portal.GetComponent<AudioSource>();
+        portalAudio.Play();
+    }
 
-	// Use this for initialization
-	
-        AudioSource fountainAudio;
-        //Play the sound on or not?
-        public bool playFountain;
-  
-        void Start()
+    void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
         {
-            //Fetch the AudioSource from the GameObject
-            fountainAudio = GetComponent<AudioSource>();
-            fountainAudio.Stop();
-            Debug.Log("playFountain is" + playFountain);
-            FountainAudio(playFountain);
+            fountainAudio.Play();
         }
 
-        public void FountainAudio(bool playFountain)
-        {          
-            Debug.Log("FountainAudio Method has been called and playFountain is " + playFountain);
+    }
 
-            if (playFountain == true)          
-            {
-                //Play the audio you attach to the AudioSource component
-                fountainAudio.Play();
-                Debug.Log("I am playing the fountainAudio of " + fountainAudio.name);
-            }
-
-            else
-            {
-                //Stop the audio
-                fountainAudio.Stop();
-            }
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            portalAudio.Play();
         }
-  
+    }  
 }
