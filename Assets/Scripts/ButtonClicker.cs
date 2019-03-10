@@ -45,11 +45,11 @@ public class ButtonClicker : MonoBehaviour {
 	public void RefreshButton()
 	{
 		buttonAnimator.SetTrigger ("ButtonPress");
-		meshRenderer.material.SetTexture ("_MainTex", buttonIsOn ? buttonOn : buttonOff);
+        Debug.Log("Triggering ButtonPress now");
+        meshRenderer.material.SetTexture ("_MainTex", buttonIsOn ? buttonOn : buttonOff);
 		if (OnClicked != null) 
 		{
             buttonSounds.PlayOneShot(buttonClick);
-            Debug.Log("Playing Button Audio now");
             OnClicked(buttonIsOn);
 		} 
 	}

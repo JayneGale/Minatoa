@@ -14,8 +14,6 @@ public class ClosePortalOnExit : MonoBehaviour {
     private void Start()
     {
         portalAnimator = portal.GetComponent<Animator>();
- //       portalAudio = portal.GetComponent<AudioSource>();
- //       fountainAudio = fountain.GetComponent<AudioSource>();
     }
 
     void OnTriggerExit(Collider other)

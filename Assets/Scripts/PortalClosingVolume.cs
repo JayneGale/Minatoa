@@ -9,6 +9,7 @@ public class PortalClosingVolume : MonoBehaviour
     public GameObject player;
     public GameObject fountain;
     public GameObject portalDoor;
+ //   public float fadeTime;
     float fountainMaxVol;
     float portalMaxVol;
     AudioSource fountainAudio;
@@ -34,10 +35,11 @@ public class PortalClosingVolume : MonoBehaviour
         playerPos = player.transform.position.x;
         insideRoom = (playerPos < portalDoorPos) ? true : false;
         onAudio = (insideRoom) ? fountainAudio : portalAudio;
-        onAudio.volume = (insideRoom)? fountainMaxVol: portalMaxVol;
+        onAudio.volume = (insideRoom) ? fountainMaxVol : portalMaxVol;
         onAudio.Play();
+        rampAudio = (insideRoom) ? portalAudio : fountainAudio;
         rampAudio.volume = 0.0f;
-        rampAudio.Play();
+        rampAudio.Stop();
     }
 
     void PortalAnimating()
@@ -51,9 +53,10 @@ public class PortalClosingVolume : MonoBehaviour
         onAudio.volume = (insideRoom) ? fountainMaxVol : portalMaxVol;
         onAudio.Play();
         rampAudio = (insideRoom) ? portalAudio : fountainAudio;
-        if(rampAudio.volume >= 0.0f && rampAudio.volume <= 1.0f)
+
+        if (rampAudio.volume >= 0.0f && rampAudio.volume <= 1.0f)
         {
-            rampAudio.volume += upOrDown * Time.deltaTime;
+            rampAudio.volume -= upOrDown * Time.deltaTime;
         }
     }
 }
