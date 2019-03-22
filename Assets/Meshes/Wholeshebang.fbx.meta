@@ -1,0 +1,161 @@
+fileFormatVersion: 2
+guid: 443728388fbb06c4981db0d26e0517d5
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Body
+    100002: Petal1
+    100004: Petal2
+    100006: Petal3
+    100008: Petal4
+    100010: Petal5
+    100012: Petal6
+    100014: PetalBottom1
+    100016: PetalBottomWest1
+    100018: PetalTopEast1
+    100020: PetalTopEast2
+    100022: PetalTopEast3
+    100024: PetalTopWest1
+    100026: polySurface2
+    100028: //RootNode
+    400000: Body
+    400002: Petal1
+    400004: Petal2
+    400006: Petal3
+    400008: Petal4
+    400010: Petal5
+    400012: Petal6
+    400014: PetalBottom1
+    400016: PetalBottomWest1
+    400018: PetalTopEast1
+    400020: PetalTopEast2
+    400022: PetalTopEast3
+    400024: PetalTopWest1
+    400026: polySurface2
+    400028: //RootNode
+    2100000: lambert1
+    2300000: Body
+    2300002: Petal1
+    2300004: Petal2
+    2300006: Petal3
+    2300008: Petal4
+    2300010: Petal5
+    2300012: Petal6
+    2300014: PetalBottom1
+    2300016: PetalBottomWest1
+    2300018: PetalTopEast1
+    2300020: PetalTopEast2
+    2300022: PetalTopEast3
+    2300024: PetalTopWest1
+    3300000: Body
+    3300002: Petal1
+    3300004: Petal2
+    3300006: Petal3
+    3300008: Petal4
+    3300010: Petal5
+    3300012: Petal6
+    3300014: PetalBottom1
+    3300016: PetalBottomWest1
+    3300018: PetalTopEast1
+    3300020: PetalTopEast2
+    3300022: PetalTopEast3
+    3300024: PetalTopWest1
+    4300000: Body
+    4300002: Petal1
+    4300004: Petal2
+    4300006: Petal3
+    4300008: Petal4
+    4300010: Petal5
+    4300012: Petal6
+    4300014: PetalTopEast1
+    4300016: PetalTopWest1
+    4300018: PetalBottom1
+    4300020: PetalBottomWest1
+    4300022: PetalTopEast2
+    4300024: PetalTopEast3
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.25
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
