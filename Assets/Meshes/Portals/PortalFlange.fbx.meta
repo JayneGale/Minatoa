@@ -1,18 +1,14 @@
 fileFormatVersion: 2
-guid: a16cdbc9e996e4c47a7c1bc3b47813f9
+guid: ce3299075c3120545a44e9066a166ef1
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: PetalBottom4
-    100002: //RootNode
-    100004: polySurface2
-    400000: PetalBottom4
-    400002: //RootNode
-    400004: polySurface2
-    2100000: lambert1
-    2300000: PetalBottom4
-    3300000: PetalBottom4
-    4300000: PetalBottom4
+    100000: //RootNode
+    400000: //RootNode
+    2100000: lambert3
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Flange
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -44,7 +40,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 2.5
+    globalScale: 0.7
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -64,7 +60,7 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 0
+    useFileScale: 1
     previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
