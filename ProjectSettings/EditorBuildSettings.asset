@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/NewMinatoaText.unity
+    guid: 5d47e9d021b44e54e906bbbec6463776
+  - enabled: 1
     path: Assets/Scenes/TryingNewPortal.unity
     guid: 50afd9e633295ab458886e59945e9a24
   m_configObjects: {}
